@@ -17,8 +17,8 @@ CREATE TABLE bookmark (
     classify VARCHAR(100),
     tag VARCHAR(100),
     is_public TINYINT(1) DEFAULT 1,
-    create_time DATETIME NOT NULL DEFAULT NOW(),
-    modify_time DATETIME NOT NULL DEFAULT NOW(),
+    create_time DATETIME NOT NULL,
+    modify_time DATETIME NOT NULL,
     primary key (bookmark_id)
 );
 alter table bookmark AUTO_INCREMENT=1025;
@@ -41,8 +41,10 @@ CREATE TABLE user(
 	email VARCHAR(100),
 	privilege TINYINT(5) DEFAULT 0,
 	type TINYINT(5) DEFAULT 0,
-	create_time DATETIME NOT NULL DEFAULT NOW(),
-    modify_time DATETIME NOT NULL DEFAULT NOW(),
+	create_time DATETIME NOT NULL,
+    modify_time DATETIME NOT NULL,
     primary key (user_id)
 );
 alter table user AUTO_INCREMENT=2045;
+
+insert into user (nick,password,email,create_time,modify_time) values('小球','123456','linqiu@gmail.com',now(),now());
