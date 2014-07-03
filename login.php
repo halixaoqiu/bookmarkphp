@@ -19,7 +19,10 @@
 ?>
 
 <html>
-	<head><title>用户登录</title></head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>用户登录</title>
+	</head>
 	<body>
 		<form action="login.php" method="post">
 			用户名：<input type="text" name="email"><br>

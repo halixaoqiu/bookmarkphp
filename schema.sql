@@ -2,7 +2,7 @@
 -- ----------------------------
 -- Create database bookmark
 -- ----------------------------
-create database bookmark;
+create database bookmark CHARACTER SET 'utf8';
 
 -- ----------------------------
 -- Table structure for `bookmark`
@@ -20,7 +20,7 @@ CREATE TABLE bookmark (
     create_time DATETIME NOT NULL,
     modify_time DATETIME NOT NULL,
     primary key (bookmark_id)
-);
+) DEFAULT CHARSET=utf8;
 alter table bookmark AUTO_INCREMENT=1025;
 
 insert into bookmark (user_id,title,url,summary,classify,tag,is_public) values ('123456','知乎','http://www.zhihu.com/',
@@ -44,7 +44,7 @@ CREATE TABLE user(
 	create_time DATETIME NOT NULL,
     modify_time DATETIME NOT NULL,
     primary key (user_id)
-);
+) DEFAULT CHARSET=utf8;
 alter table user AUTO_INCREMENT=2045;
 
 insert into user (nick,password,email,create_time,modify_time) values('小球','123456','linqiu@gmail.com',now(),now());

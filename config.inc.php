@@ -7,7 +7,7 @@
 	define("DBPASS","");
 	
 	try{
-		$pdo = new PDO(DSN,DBUSER,DBPASS);
+		$pdo = new PDO(DSN,DBUSER,DBPASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "set names utf8"));
 	}catch(PDOException $e){
 		die("connect db fail：".$e->getMessage());
 	}
