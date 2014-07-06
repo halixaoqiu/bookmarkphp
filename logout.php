@@ -2,24 +2,17 @@
 	/**
 	 * 退出登录页
 	 */
-	session_start();
-	
-	if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
-	}else{
-		header("location:login.php");
-		exit;
-	}
+	require '/control/islogin.php';
 	
 	$nick = $_SESSION['nick'];
-	$_SESSION = array();
 	
+	//清除session
+	$_SESSION = array();
 	if(isset($_COOKIE[session_name()])){
 		setcookie(session_name(),'',time()-42000,'/');
 	}
-	
 	session_destroy();
 ?>
-
 
 <html>
 	<head>

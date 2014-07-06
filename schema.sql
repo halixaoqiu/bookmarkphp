@@ -45,6 +45,7 @@ CREATE TABLE user(
     modify_time DATETIME NOT NULL,
     primary key (user_id)
 ) DEFAULT CHARSET=utf8;
+ALTER  TABLE user ADD UNIQUE (`email`);
 alter table user AUTO_INCREMENT=2045;
 
 insert into user (nick,password,email,create_time,modify_time) values('小球','123456','linqiu@gmail.com',now(),now());
