@@ -24,12 +24,17 @@
 	}
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<title>用户登录</title>
+	   	<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+   		<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+   		<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+		<h1>填写登录信息：</h1>
 		<form action="login.php" method="post">
 			邮箱：<input type="text" name="email"><br>
 			密码：<input type="password" name="password"><br>
