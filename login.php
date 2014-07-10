@@ -39,7 +39,7 @@
    		<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -61,15 +61,25 @@
 		</div>
 		<div class="container">
 			<div class="starter-template">
-		      <div class="starter-template">
-		        <h1>Bootstrap starter template</h1>
-		        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-		      </div>
 				<h1>填写登录信息：</h1>
-				<form action="login.php" method="post">
-					邮箱：<input type="text" name="email"><br>
-					密码：<input type="password" name="password"><br>
-					<input type="submit" name="sub" value="登录">
+				<form class="form-horizontal" role="form" action="login.php" method="post">
+  					<div class="form-group">
+    					<label for="email"  class="col-sm-2 control-label">邮箱：</label>
+    					<div class="col-sm-10">
+    						<input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+    					</div>
+  					</div>
+  					<div class="form-group">
+				    	<label for="password" class="col-sm-2 control-label">密码：</label>
+				    	<div class="col-sm-10">
+					    	<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+				  		</div>
+				  	</div>
+				  	<div class="form-group">
+				  		<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" name="sub" class="btn btn-default">登录</button>
+						</div>
+					</div>
 				</form>
 				<div>
 					<span>没有账号？</span>
