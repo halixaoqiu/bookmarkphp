@@ -14,18 +14,6 @@
 		header("location:index.php");
 		exit;
 	}
-	
-	if(isset($_POST['sub'])){
-		$stmt = $pdo->prepare("select user_id,nick from user where email=? and password=?");
-		$stmt->execute(array($_POST["email"],$_POST["password"]));
-		if($stmt->rowCount()>0){
-			$_SESSION = $stmt->fetch(PDO::FETCH_ASSOC);
-			$_SESSION["isLogin"] = 1;
-			header("location:index.php");
-		}else{
-			echo '用户名or密码错误';
-		}
-	}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +24,7 @@
 	<body>
 		<?php include 'control/navigation.php';?>
 		<div class="container">
-			<form class="form-horizontal" role="form" action="login.php" method="post">
+			<form class="form-horizontal" role="form" action="action/login.action.php" method="post">
   				<div class="form-group">
     				<label for="email"  class="col-sm-2 control-label">邮箱：</label>
     				<div class="col-sm-10">
