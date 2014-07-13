@@ -2,8 +2,12 @@
 	/**
 	 * 用户注册表单和用户注册处理
 	 */
-	session_start();
 	require 'config.inc.php';
+	
+	//常量定义
+	$page_title = "草莓收藏-用户注册";
+	
+	session_start();
 	
 	//判断是否已经登录
 	if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
@@ -52,10 +56,10 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<title>用户注册</title>
+		<?php include 'control/head.php';?>
 	</head>
 	<body>
+		<?php include 'control/navigation.php';?>
 		<div>
 			<span>错误信息：<?php echo $errmsg?></span>
 		</div>

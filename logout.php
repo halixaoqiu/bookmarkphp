@@ -4,6 +4,9 @@
 	 */
 	require '/control/islogin.php';
 	
+	//常量定义
+	$page_title = "草莓收藏-用户注销";
+	
 	$nick = $_SESSION['nick'];
 	
 	//清除session
@@ -16,10 +19,10 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<title>用户注销</title>
+		<?php include 'control/head.php';?>
 	</head>
 	<body>
+		<?php include 'control/navigation.php';?>
 		<?php echo $nick ?>，再见
 		<a href="login.php">重新登录</a>
 	</body>
