@@ -15,15 +15,8 @@
 		setcookie(session_name(),'',time()-42000,'/');
 	}
 	session_destroy();
+	
+	//跳转到登录页
+	header("location:login.php");
+	exit;
 ?>
-
-<html>
-	<head>
-		<?php include 'control/head.php';?>
-	</head>
-	<body>
-		<?php include 'control/navigation.php';?>
-		<?php echo $nick ?>，再见
-		<a href="login.php">重新登录</a>
-	</body>
-</html>
