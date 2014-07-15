@@ -1,4 +1,12 @@
 <?php
+
+$is_login = false;
+$nick = "";
+if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
+	$is_login = true;
+	$nick = trim($_SESSION['nick']);
+}
+
 ?>
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
@@ -15,7 +23,15 @@
 		</div>
 		<div>
       		<p class="navbar-text navbar-right">
-	        	<a href="logout.php" class="navbar-link">退出</a>
+      		<?php 
+      			if($is_login){
+      				echo "欢迎$nick | ";
+      				echo '<a href="logout.php" class="navbar-link">退出</a>';
+      			}else{
+      				echo '<a href="login.php" class="navbar-link">登录</a> | ';
+      				echo '<a href="register.php" class="navbar-link">注册</a>';
+      			}
+      		?>
 	    	</p>
 	   	</div>
 	</div>

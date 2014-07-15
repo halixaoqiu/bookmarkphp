@@ -25,15 +25,15 @@
 		<div class="container">
 			<form class="form-horizontal" role="form" action="action/addbookmark.action.php" method="post">
 				<div class="form-group">
-			    	<label for="title" class="col-sm-2 control-label">标题</label>
-				    <div class="col-sm-10">
-			       		<input type="text" name="title" class="form-control" id="title" placeholder="请输入标题">
-				     </div>
-				</div>
-				<div class="form-group">
 			    	<label for="url" class="col-sm-2 control-label">网址</label>
 				    <div class="col-sm-10">
 			       		<input type="text" name="url" class="form-control" id="url" placeholder="请输入网址">
+				     </div>
+				</div>
+				<div class="form-group">
+			    	<label for="title" class="col-sm-2 control-label">标题</label>
+				    <div class="col-sm-10">
+			       		<input type="text" name="title" class="form-control" id="title" placeholder="请输入标题">
 				     </div>
 				</div>
 				<div class="form-group">
