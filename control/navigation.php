@@ -10,7 +10,7 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 ?>
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
-	<div class="container">
+	<div class="container bp-fix">
 		<div class="navbar-header">
 	    	<a class="navbar-brand" href="index.php">草莓收藏</a>
 		</div>

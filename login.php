@@ -23,31 +23,29 @@
 	</head>
 	<body>
 		<?php include 'control/navigation.php';?>
-		<div class="container">
+		<div class="container bp-fix">
 			<div class="row">
 				<form class="form-horizontal" role="form" action="action/login.action.php" method="post">
 	  				<div class="form-group">
-	    				<label for="email"  class="col-sm-2 control-label">邮箱：</label>
-	    				<div class="col-sm-10">
-	    					<input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+	    				<label for="email"  class="col-sm-2 control-label">邮箱</label>
+	    				<div class="col-sm-6">
+	    					<input type="email" name="email" class="form-control" id="email" placeholder="">
 	    				</div>
 	  				</div>
 	  				<div class="form-group">
-					    <label for="password" class="col-sm-2 control-label">密码：</label>
-					    <div class="col-sm-10">
-						    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+					    <label for="password" class="col-sm-2 control-label">密码</label>
+					    <div class="col-sm-6">
+						    <input type="password" name="password" class="form-control" id="password" placeholder="">
 					  	</div>
-					  </div>
-					  <div class="form-group">
-					  	<div class="col-sm-offset-2 col-sm-10">
+				  	</div>
+				  	<div class="form-group">
+				  		<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" name="sub" class="btn btn-default">登录</button>
+							<span class="tag-split">没有账号？</span>
+							<span><a href="register.php">我要注册</a></span>
 						</div>
 					</div>
 				</form>
-			</div>
-			<div>
-				<span>没有账号？</span>
-				<span><a href="register.php">我要注册</a></span>
 			</div>
 		</div>
 	</body>
