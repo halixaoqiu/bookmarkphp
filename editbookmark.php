@@ -37,31 +37,31 @@
 						<div class="form-group">
 					    	<label for="url" class="col-sm-2 control-label">网址*</label>
 						    <div class="col-sm-9">
-					       		<input type="text" name="url" class="form-control" id="url" value="<?php echo $row['url']?>" placeholder="请输入网址">
+					       		<input type="text" name="url" class="form-control" id="url" value="<?php echo $row['url']?>" placeholder="">
 						     </div>
 						</div>
 						<div class="form-group">
 					    	<label for="title" class="col-sm-2 control-label">标题*</label>
 						    <div class="col-sm-9">
-					       		<input type="text" name="title" class="form-control" id="title" value="<?php echo $row["title"]?>" placeholder="请输入标题">
+					       		<input type="text" name="title" class="form-control" id="title" value="<?php echo $row["title"]?>" placeholder="">
 						     </div>
 						</div>
 						<div class="form-group">
 					    	<label for="summary" class="col-sm-2 control-label">描述&nbsp;</label>
 						    <div class="col-sm-9">
-						    	<textarea class="form-control" name="summary" rows="5" id="summary" placeholder="请输入描述"><?php echo $row['summary']?></textarea>
+						    	<textarea class="form-control" name="summary" rows="5" id="summary" placeholder=""><?php echo $row['summary']?></textarea>
 						     </div>
 						</div>
 						<div class="form-group">
 					    	<label for="tag" class="col-sm-2 control-label">标签&nbsp;</label>
 						    <div class="col-sm-9">
-					       		<input type="text" name="tag" class="form-control" id="tag" value="<?php echo $row['tag']?>" placeholder="请输入标签">
+					       		<input type="text" name="tag" class="form-control" id="tag" value="<?php echo $row['tag']?>" placeholder="">
 						     </div>
 						</div>
 						<div class="form-group">
 					    	<label for="classify" class="col-sm-2 control-label">分类&nbsp;</label>
 						    <div class="col-sm-9">
-					       		<input type="text" name="classify" class="form-control" id="classify" value="<?php echo $row['classify']?>" placeholder="请输入分类">
+					       		<input type="text" name="classify" class="form-control" id="classify" value="<?php echo $row['classify']?>" placeholder="">
 						     </div>
 						</div>
 						<div class="form-group">
