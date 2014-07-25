@@ -27,11 +27,6 @@ insert into bookmark (user_id,title,url,summary,classify,tag,is_public) values (
 '一个社会化的知识分享网站','收藏备忘','知乎，quora','1');
 
 -- ----------------------------
--- Table structure for `admin`
--- If u need u can add a separate table for admin
--- ----------------------------
-
--- ----------------------------
 -- Table structure for `user`
 -- ----------------------------
 CREATE TABLE user(
@@ -49,3 +44,7 @@ ALTER  TABLE user ADD UNIQUE (`email`);
 alter table user AUTO_INCREMENT=2045;
 
 insert into user (nick,password,email,create_time,modify_time) values('小球','123456','linqiu@gmail.com',now(),now());
+
+-- ----------------------------
+-- Table structure for `classify`
+-- ----------------------------

@@ -36,7 +36,7 @@ echo <<<EOT
 		<span class="color-tag">网址</span>
 		<span>{$row['url']}</span>
 	</div>
-	<div class="item-block-common">{$row['summary']}</div>
+	<div class="item-block-common"><small>{$row['summary']}</small></div>
 	<div class="item-block-common">
 		<span class="color-tag">{$is_public_text}</span>
 		<span class="color-tag tag-split">分类</span>
