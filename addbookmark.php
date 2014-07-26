@@ -69,7 +69,7 @@
 					</form>
 				</div>
 				<div class="col-md-3">
-					<?php include 'control/leftblock.php';?>
+					<?php include 'control/rightblock.php';?>
 				</div>
 			</div>
 		</div>

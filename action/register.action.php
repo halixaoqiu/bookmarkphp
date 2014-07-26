@@ -6,6 +6,7 @@
  */
 
 require '../config.inc.php';
+require '../biz/bookmark.util.php';
 
 session_start();
 
@@ -15,27 +16,32 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 }
 
 if(isset($_POST['sub'])){
-	if(empty($_POST['nick'])||empty($_POST['email'])||empty($_POST['password'])||empty($_POST['repassword'])){
+	$nick = trim($_POST['nick']);
+	$email = trim($_POST['email']);
+	$password = trim($_POST['password']);
+	$repassword = trim($_POST['repassword']);
+	
+	if(empty($nick)||empty($email)||empty($password)||empty($repassword)){
 		redirect(false);
 	}
 	
-	if($_POST['password']!==$_POST['repassword']){
+	if($password!==$repassword){
 		redirect(false);
 	}
 	
 	//判断邮箱是否已经被注册
 	$stmt = $pdo->prepare("select user_id,nick from user where email=?");
-	$stmt->execute(array($_POST["email"]));
+	$stmt->execute(array($email));
 	if($stmt->rowCount()>0){
 		redirect(false);
 	}else{
 		//插入新用户
 		try{
 			$stmt = $pdo->prepare("insert into user(nick,password,email,create_time,modify_time) values(?,?,?,now(),now())");		
-			$count = $stmt->execute(array($_POST["nick"],$_POST["password"],$_POST["email"]));
+			$count = $stmt->execute(array($nick,get_pwd($password),$email));
 			if($count>0){
 				$stmt = $pdo->prepare("select user_id,nick from user where email=?");
-				$stmt->execute(array($_POST["email"]));
+				$stmt->execute(array($email));
 				if($stmt->rowCount()>0){
 					$_SESSION = $stmt->fetch(PDO::FETCH_ASSOC);
 					$_SESSION["isLogin"] = 1;
