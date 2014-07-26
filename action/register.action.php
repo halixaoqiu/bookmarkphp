@@ -7,6 +7,7 @@
 
 require '../config.inc.php';
 require '../biz/bookmark.util.php';
+require '../biz/checkcsrf.func.php';
 
 session_start();
 
@@ -20,6 +21,11 @@ if(isset($_POST['sub'])){
 	$email = trim($_POST['email']);
 	$password = trim($_POST['password']);
 	$repassword = trim($_POST['repassword']);
+	
+	//csrf token check
+	if(!check_token()){
+		redirect(false);
+	}
 	
 	if(empty($nick)||empty($email)||empty($password)||empty($repassword)){
 		redirect(false);
@@ -38,7 +44,7 @@ if(isset($_POST['sub'])){
 		//插入新用户
 		try{
 			$stmt = $pdo->prepare("insert into user(nick,password,email,create_time,modify_time) values(?,?,?,now(),now())");		
-			$count = $stmt->execute(array($nick,get_pwd($password),$email));
+			$count = $stmt->execute(array($nick,gen_pwd($password),$email));
 			if($count>0){
 				$stmt = $pdo->prepare("select user_id,nick from user where email=?");
 				$stmt->execute(array($email));

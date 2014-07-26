@@ -4,6 +4,7 @@
 	 */
 	require '/control/islogin.php';
 	require 'config.inc.php';
+	require 'biz/checkcsrf.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-编辑收藏";
@@ -34,6 +35,7 @@
 				<div class="col-md-9">
 					<form class="form-horizontal" role="form" action="action/editbookmark.action.php" method="post">
 						<input type="hidden" name="bookmark_id" value=<?php echo $bookmark_id?>>
+						<?php gen_csrf_token() ?>
 						<div class="form-group">
 					    	<label for="url" class="col-sm-2 control-label">网址*</label>
 						    <div class="col-sm-9">

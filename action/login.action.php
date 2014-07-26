@@ -7,6 +7,7 @@
 
 require '../config.inc.php';
 require '../biz/bookmark.util.php';
+require '../biz/checkcsrf.func.php';
 
 session_start();
 	
@@ -16,10 +17,16 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 }
 
 if(isset($_POST['sub'])){
+	
+	//csrf token check
+	if(!check_token()){
+		redirect(false,"csrferr");
+	}
+	
 	$email = trim($_POST["email"]);
 	$password = trim($_POST["password"]);
 	$stmt = $pdo->prepare("select user_id,nick from user where email=? and password=?");
-	$stmt->execute(array($email,get_pwd($password)));
+	$stmt->execute(array($email,gen_pwd($password)));
 	if($stmt->rowCount()>0){
 		$_SESSION = $stmt->fetch(PDO::FETCH_ASSOC);
 		$_SESSION["isLogin"] = 1;

@@ -13,7 +13,6 @@
 	$stmt->execute(array($user_id));
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <html>
 	<head>
 		<?php include 'control/head.php';?>

@@ -7,8 +7,15 @@
 
 require '../config.inc.php';
 require '../control/islogin.php';
+require '../biz/checkcsrf.func.php';
 
 if(isset($_POST['sub'])){
+	
+	//csrf token check
+	if(!check_token()){
+		redirect(false,"csrferr");
+	}
+	
 	$title = trim($_POST['title']);
 	$url = trim($_POST['url']);
 	$summary = trim($_POST['summary']);

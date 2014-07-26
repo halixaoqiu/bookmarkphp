@@ -3,6 +3,7 @@
 	 * 添加收藏页
 	 */
 	require '/control/islogin.php';
+	require 'biz/checkcsrf.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-添加收藏";
@@ -23,6 +24,7 @@
 			<div class="row">
 				<div class="col-md-9">
 					<form class="form-horizontal" role="form" action="action/addbookmark.action.php" method="post">
+						<?php gen_csrf_token() ?>
 						<div class="form-group">
 					    	<label for="url" class="col-sm-2 control-label">网址*</label>
 						    <div class="col-sm-9">

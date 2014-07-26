@@ -3,6 +3,7 @@
 	 * 用户登录表单和处理用户登录
 	 */
 	require 'config.inc.php';
+	require 'biz/checkcsrf.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-用户登录";
@@ -26,6 +27,7 @@
 		<div class="container bp-fix">
 			<div class="row">
 				<form class="form-horizontal" role="form" action="action/login.action.php" method="post">
+					<?php gen_csrf_token() ?>
 	  				<div class="form-group">
 	    				<label for="email"  class="col-sm-2 control-label">邮箱</label>
 	    				<div class="col-sm-6">
