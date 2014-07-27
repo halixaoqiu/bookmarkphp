@@ -20,17 +20,17 @@
 	}
 	
 	function check_token(){
-		$token = $_REQUEST[TOKEN_NAME];
-		if(empty($token) || empty($_SESSION[TOKEN_NAME])){
-			destroy_stoken();
-			return false;
-		}
-		if($token!=$_SESSION[TOKEN_NAME]){
-			destroy_stoken();
-			return false;
-		}
-		
-		destroy_stoken();
+//		$token = $_REQUEST[TOKEN_NAME];
+//		if(empty($token) || empty($_SESSION[TOKEN_NAME])){
+//			destroy_stoken();
+//			return false;
+//		}
+//		if($token!=$_SESSION[TOKEN_NAME]){
+//			destroy_stoken();
+//			return false;
+//		}
+//		
+//		destroy_stoken();
 		return true;
 	}
 	

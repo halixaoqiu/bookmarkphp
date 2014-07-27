@@ -26,6 +26,7 @@
 					if(!empty($rows)){
 						foreach($rows as $row){
 							$is_public_text = $row['is_public']==1?"公开":"私有";
+							$summary_class = !empty($row['summary'])?"item-block-common":"";
 echo <<<EOT
 <div class="main-container">
 	<div class="font-bold">
@@ -35,11 +36,11 @@ echo <<<EOT
 		<span class="color-tag">网址</span>
 		<span>{$row['url']}</span>
 	</div>
-	<div class="item-block-common">{$row['summary']}</div>
+	<div class="{$summary_class}">{$row['summary']}</div>
 	<div class="item-block-common">
 		<span class="color-tag">{$is_public_text}</span>
-		<span class="color-tag tag-split">分类</span>
-		<span class="color-tag"><a>{$row['classify']}</a></span> 
+<!--		<span class="color-tag tag-split">分类</span>-->
+<!--		<span class="color-tag"><a>{$row['classify']}</a></span> -->
 		<span class="color-tag tag-split">标签</span>
 		<span><a>{$row['tag']}</a></span> 
 		<span class="color-tag tag-split">收藏于</span>

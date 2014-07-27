@@ -60,12 +60,12 @@
 					       		<input type="text" name="tag" class="form-control" id="tag" value="<?php echo $row['tag']?>" placeholder="">
 						     </div>
 						</div>
-						<div class="form-group">
-					    	<label for="classify" class="col-sm-2 control-label">分类&nbsp;</label>
-						    <div class="col-sm-9">
-					       		<input type="text" name="classify" class="form-control" id="classify" value="<?php echo $row['classify']?>" placeholder="">
-						     </div>
-						</div>
+<!--						<div class="form-group">-->
+<!--					    	<label for="classify" class="col-sm-2 control-label">分类&nbsp;</label>-->
+<!--						    <div class="col-sm-9">-->
+<!--					       		<input type="text" name="classify" class="form-control" id="classify" value="<?php echo $row['classify']?>" placeholder="">-->
+<!--						     </div>-->
+<!--						</div>-->
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<div class="checkbox">

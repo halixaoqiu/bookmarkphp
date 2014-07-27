@@ -11,11 +11,6 @@ require '../biz/checkcsrf.func.php';
 
 if(isset($_POST['sub'])){
 	
-	//csrf token check
-	if(!check_token()){
-		redirect(false,"csrferr");
-	}
-	
 	$bookmark_id= trim($_POST['bookmark_id']);
 	$title = trim($_POST['title']);
 	$url = trim($_POST['url']);
@@ -25,6 +20,10 @@ if(isset($_POST['sub'])){
 	$is_public = trim($_POST['is_public'])=="on"?1:0;
 	$user_id = trim($_SESSION['user_id']);
 	
+	//csrf token check
+	if(!check_token()){
+		redirect(false,$bookmark_id,"CSRF_ERROR");
+	}
 	//必填字段校验
 	if(empty($title)||empty($url)){
 		$errmsg="FORM_INVALID";
@@ -49,12 +48,12 @@ if(isset($_POST['sub'])){
  * 跳转处理
  * @param unknown_type $isSuccess
  */
-function redirect($isSuccess, $bookmark_id){
+function redirect($isSuccess, $bookmark_id, $errormsg){
 	if($isSuccess){
 		header("location:../index.php");
 		exit;
 	}else{
-		header("location:../editbookmark.php?bookmark_id=$bookmark_id");
+		header("location:../editbookmark.php?bookmark_id=$bookmark_id&errormsg=$errormsg");
 		exit;
 	}
 }
