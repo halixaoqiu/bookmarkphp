@@ -46,5 +46,27 @@ alter table user AUTO_INCREMENT=2045;
 insert into user (nick,password,email,create_time,modify_time) values('小球','123456','linqiu@gmail.com',now(),now());
 
 -- ----------------------------
--- Table structure for `classify`
+-- Table structure for `tag`
 -- ----------------------------
+CREATE TABLE tag(
+	tag_id BIGINT AUTO_INCREMENT, 
+	tag_name VARCHAR(50) NOT NULL,
+	user_id BIGINT NOT NULL,
+	create_time DATETIME NOT NULL,
+	modify_time DATETIME NOT NULL,
+	primary key (tag_id)
+) DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `bookmark_tag`
+-- ----------------------------
+CREATE TABLE bookmark_tag(
+	id BIGINT AUTO_INCREMENT, 
+	bookmark_id BIGINT NOT NULL,
+	tag_id BIGINT NOT NULL,
+	create_time DATETIME NOT NULL,
+	modify_time DATETIME NOT NULL,
+	primary key (id)
+) DEFAULT CHARSET=utf8;
+
+
