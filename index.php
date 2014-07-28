@@ -4,6 +4,7 @@
 	 */
 	require '/control/islogin.php';
 	require 'config.inc.php';
+	require '/biz/tag.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-首页";
@@ -25,6 +26,8 @@
 				<?php 
 					if(!empty($rows)){
 						foreach($rows as $row){
+							$bookmark_id = $row['bookmark_id'];
+							$tags = get_tags_by_bookmark_id($bookmark_id,$pdo);
 							$is_public_text = $row['is_public']==1?"公开":"私有";
 							$summary_class = !empty($row['summary'])?"item-block-common":"";
 echo <<<EOT
@@ -39,13 +42,11 @@ echo <<<EOT
 	<div class="{$summary_class}">{$row['summary']}</div>
 	<div class="item-block-common">
 		<span class="color-tag">{$is_public_text}</span>
-<!--		<span class="color-tag tag-split">分类</span>-->
-<!--		<span class="color-tag"><a>{$row['classify']}</a></span> -->
 		<span class="color-tag tag-split">标签</span>
-		<span><a>{$row['tag']}</a></span> 
+		<span><a>{$tags}</a></span> 
 		<span class="color-tag tag-split">收藏于</span>
 		<span class="color-tag">{$row['create_time']}</span>
-		<span class="color-tag tag-split"><a href="editbookmark.php?bookmark_id={$row['bookmark_id']}" target="_blank">编辑</a></span>
+		<span class="color-tag tag-split"><a href="editbookmark.php?bookmark_id={$bookmark_id}" target="_blank">编辑</a></span>
 	</div>
 	<div class="split-line-block">
 		<div class="split-line"></div>

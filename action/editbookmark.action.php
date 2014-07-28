@@ -16,7 +16,6 @@ if(isset($_POST['sub'])){
 	$url = trim($_POST['url']);
 	$summary = trim($_POST['summary']);
 	$tag = trim($_POST['tag']);
-	$classify = trim($_POST['classify']);
 	$is_public = trim($_POST['is_public'])=="on"?1:0;
 	$user_id = trim($_SESSION['user_id']);
 	
@@ -37,8 +36,8 @@ if(isset($_POST['sub'])){
 		header("location:index.php");
 	}
 	
-	$stmt = $pdo->prepare("update bookmark set title=?,url=?,summary=?,classify=?,tag=?,is_public=?,modify_time=now() where bookmark_id=?");		
-	$count = $stmt->execute(array($title,$url,$summary,$classify,$tag,$is_public,$bookmark_id));
+	$stmt = $pdo->prepare("update bookmark set title=?,url=?,summary=?,tag=?,is_public=?,modify_time=now() where bookmark_id=?");		
+	$count = $stmt->execute(array($title,$url,$summary,$tag,$is_public,$bookmark_id));
 	if($count>0){
 		redirect(true);
 	}

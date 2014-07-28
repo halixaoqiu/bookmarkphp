@@ -6,7 +6,7 @@
  */
 
 require '../config.inc.php';
-require '../biz/bookmark.util.php';
+require '../biz/util.func.php';
 require '../biz/checkcsrf.func.php';
 
 session_start();
