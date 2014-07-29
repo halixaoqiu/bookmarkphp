@@ -8,6 +8,7 @@
 require '../config.inc.php';
 require '../control/islogin.php';
 require '../biz/checkcsrf.func.php';
+require '../biz/tag.func.php';
 
 if(isset($_POST['sub'])){
 	
@@ -29,16 +30,28 @@ if(isset($_POST['sub'])){
 		redirect(false,$bookmark_id);
 	}
 	
-	//权限校验
+	//用户权限校验
 	$stmt = $pdo->prepare("select * from bookmark where bookmark_id=? and user_id=?");
 	$stmt->execute(array($bookmark_id,$user_id));
 	if($stmt->rowCount()<=0){
 		header("location:index.php");
 	}
 	
-	$stmt = $pdo->prepare("update bookmark set title=?,url=?,summary=?,tag=?,is_public=?,modify_time=now() where bookmark_id=?");		
-	$count = $stmt->execute(array($title,$url,$summary,$tag,$is_public,$bookmark_id));
+	$stmt = $pdo->prepare("update bookmark set title=?,url=?,summary=?,is_public=?,modify_time=now() where bookmark_id=?");		
+	$count = $stmt->execute(array($title,$url,$summary,$is_public,$bookmark_id));
 	if($count>0){
+		//分割标签，创建标签记录
+		$tag_id_name_array = create_tags($tag,$user_id,$pdo);
+		if(empty($tag_id_name_array)){
+			//如果$tag为空，清空bookmark_tag表的关联记录
+			remove_bookmark_tag_by_bookmark_id($bookmark_id,$pdo);
+		}else{
+			//如果$tag不为空，先清空老的bookmark_tag表记录，再插入新记录
+			remove_bookmark_tag_by_bookmark_id($bookmark_id,$pdo);
+			foreach($tag_id_name_array as $arr){
+				create_a_bookmark_tag($bookmark_id,$arr['tag_id'],$arr['tag_name'],$pdo);
+			}
+		}
 		redirect(true);
 	}
 }

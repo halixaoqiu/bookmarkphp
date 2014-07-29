@@ -27,7 +27,12 @@
 					if(!empty($rows)){
 						foreach($rows as $row){
 							$bookmark_id = $row['bookmark_id'];
-							$tags = get_tags_by_bookmark_id($bookmark_id,$pdo);
+							$tag_array = get_tag_array_by_bookmark_id($bookmark_id,$pdo);
+							$tag_html = "";
+							foreach($tag_array as $tag){
+								$tag_html = $tag_html."<span><a href='index.php'>".$tag."</a></span> ";
+							}
+							$tag_html = trim($tag_html);
 							$is_public_text = $row['is_public']==1?"公开":"私有";
 							$summary_class = !empty($row['summary'])?"item-block-common":"";
 echo <<<EOT
@@ -43,7 +48,7 @@ echo <<<EOT
 	<div class="item-block-common">
 		<span class="color-tag">{$is_public_text}</span>
 		<span class="color-tag tag-split">标签</span>
-		<span><a>{$tags}</a></span> 
+		<span><a>{$tag_html}</a></span> 
 		<span class="color-tag tag-split">收藏于</span>
 		<span class="color-tag">{$row['create_time']}</span>
 		<span class="color-tag tag-split"><a href="editbookmark.php?bookmark_id={$bookmark_id}" target="_blank">编辑</a></span>

@@ -5,12 +5,13 @@
 	require '/control/islogin.php';
 	require 'config.inc.php';
 	require 'biz/checkcsrf.func.php';
+	require '/biz/tag.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-编辑收藏";
 	
 	$user_id = $_SESSION['user_id'];
-	$bookmark_id = $_GET['bookmark_id'];
+	$bookmark_id = trim($_GET['bookmark_id']);
 	$stmt = $pdo->prepare("select * from bookmark where bookmark_id=? and user_id=?");
 	$stmt->execute(array($bookmark_id,$user_id));
 	
@@ -19,6 +20,7 @@
 	if($stmt->rowCount()>0){
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		$is_public = $row['is_public']==1?true:false;
+		$tags = get_tag_str_by_bookmark_id($bookmark_id,$pdo);
 	}else{
 		header("location:index.php");
 	}
@@ -57,7 +59,7 @@
 						<div class="form-group">
 					    	<label for="tag" class="col-sm-2 control-label">标签&nbsp;</label>
 						    <div class="col-sm-9">
-					       		<input type="text" name="tag" class="form-control" id="tag" value="<?php echo $row['tag']?>" placeholder="">
+					       		<input type="text" name="tag" class="form-control" id="tag" value="<?php echo $tags?>" placeholder="">
 						     </div>
 						</div>
 						<div class="form-group">

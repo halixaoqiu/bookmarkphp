@@ -37,13 +37,12 @@ if(isset($_POST['sub'])){
 		redirect(false,$errmsg);
 	}
 	
-	//分割标签，创建标签记录
-	$tag_id_name_array = create_tags($tag,$user_id,$pdo);
-	
 	//插入收藏记录
 	$stmt = $pdo->prepare("insert into bookmark(user_id,title,url,summary,is_public,create_time,modify_time) values(?,?,?,?,?,now(),now())");		
 	$count = $stmt->execute(array($user_id,$title,$url,$summary,$is_public));
 	if($count>0){
+		//分割标签，创建标签记录
+		$tag_id_name_array = create_tags($tag,$user_id,$pdo);
 		//在bookmark_tag表中插入收藏和标签的关联记录
 		if(!empty($tag_id_name_array)){
 			$bookmark_id = $pdo->lastInsertId();
