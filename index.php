@@ -52,6 +52,7 @@ echo <<<EOT
 		<span class="color-tag tag-split">收藏于</span>
 		<span class="color-tag">{$row['create_time']}</span>
 		<span class="color-tag tag-split"><a href="editbookmark.php?bookmark_id={$bookmark_id}" target="_blank">编辑</a></span>
+		<span class="color-tag tag-split"><a href="" target="_blank">删除</a></span>
 	</div>
 	<div class="split-line-block">
 		<div class="split-line"></div>

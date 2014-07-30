@@ -15,12 +15,12 @@
 ?>
 
 <div><span><a href="addbookmark.php">添加收藏</a></span></div>
-<div><span><a href="">分类管理</a></span></div>
-<div><span><a href="">标签管理</a></span></div>
+<div><span><a href="">管理收藏</a></span></div>
+<div><span><a href="">我的标签</a></span></div>
 <div class="split-line-block">
 	<div class="split-line"></div>
 </div>
 <div>
-	<span><h3>我的标签</h3></span>
+	<span><h3>常用标签</h3></span>
 	<?php echo $tag_html ?>
 </div>
