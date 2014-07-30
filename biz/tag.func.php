@@ -5,12 +5,12 @@
  */
 
 /**
- * 获取标签对应id
+ * 根据tag_name获取对应的id
  * @param unknown_type $tag
  * @param unknown_type $user_id
  * @param unknown_type $pdo
  */
-function get_tag_id($tag, $user_id, $pdo){
+function get_tag_id_by_tag_name($tag, $user_id, $pdo){
 	$stmt = $pdo->prepare("select tag_id from tag where tag_name=? and user_id=?");
 	$stmt->execute(array($tag,$user_id));
 	if($stmt->rowCount()>0){
@@ -19,6 +19,32 @@ function get_tag_id($tag, $user_id, $pdo){
 	}else{
 		return -1;
 	}
+}
+
+/**
+ * 根据user_id获取该用户的tag列表
+ * @param unknown_type $user_id
+ * @param unknown_type $pdo
+ */
+function get_tags_by_user_id($user_id, $pdo){
+	if(empty($user_id)){
+		return null;
+	}
+	$tag_id_name_array = array();
+	$stmt = $pdo->prepare("select * from tag where user_id=?");
+	$stmt->execute(array($user_id));
+	if($stmt->rowCount()>0){
+		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		if(!empty($rows)){
+			foreach($rows as $row){
+				$arr = array();
+				$arr['tag_id'] = $row['tag_id'];
+				$arr['tag_name'] = $row['tag_name'];
+				array_push($tag_id_name_array, $arr);
+			}
+		}
+	}
+	return $tag_id_name_array;
 }
 
 /**
@@ -50,7 +76,7 @@ function create_tags($tag,$user_id,$pdo){
 		$tag_array = array_unique($tag_array);
 		//标签如果存在就取出tag_id，如果不存在就插入新tag记录
 		foreach($tag_array as $each_tag){
-			$tag_id = get_tag_id($each_tag,$user_id,$pdo);
+			$tag_id = get_tag_id_by_tag_name($each_tag,$user_id,$pdo);
 			if($tag_id > 0){
 				$arr = array();
 				$arr['tag_name'] = $each_tag;

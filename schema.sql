@@ -14,7 +14,6 @@ CREATE TABLE bookmark (
     title VARCHAR(255) NOT NULL,
     url VARCHAR(100) NOT NULL,
     summary TEXT,
-    tag VARCHAR(100),
     is_public TINYINT(1) DEFAULT 1,
     create_time DATETIME NOT NULL,
     modify_time DATETIME NOT NULL,
