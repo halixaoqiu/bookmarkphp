@@ -6,10 +6,28 @@
 	$user_id = $_SESSION['user_id'];
 	
 	$tag_id_name_array = get_tags_by_user_id($user_id, $pdo);
+	$tag_id_array = array();
+	foreach($tag_id_name_array as $tag){
+		array_push($tag_id_array, $tag['tag_id']);
+	}
+	$tag_id_count_array = count_bookmarks_of_tags_biggerthan0($tag_id_array,$pdo);
+	$tag_merge_array = array();
+	foreach($tag_id_count_array as $tag_id_count){
+		$arr = array();
+		$arr['tag_id'] = $tag_id_count['tag_id'];
+		$arr['tag_count'] = $tag_id_count['tag_count'];
+		foreach($tag_id_name_array as $tag_id_name){
+			if($tag_id_name['tag_id']==$tag_id_count['tag_id']){
+				$arr['tag_name'] = $tag_id_name['tag_name'];
+				break;
+			}
+		}
+		array_push($tag_merge_array, $arr);
+	}
 	
 	$tag_html = "";
-	foreach($tag_id_name_array as $tag){
-		$tag_html = $tag_html."<span class='tag-split-my-tag'>".$tag['tag_name']."</span>";
+	foreach($tag_merge_array as $tag){
+		$tag_html = $tag_html."<span class='tag-split-my-tag'>".$tag['tag_name']."(".$tag['tag_count'].")</span>";
 	}
 	
 ?>
@@ -21,6 +39,6 @@
 	<div class="split-line"></div>
 </div>
 <div>
-	<span><h3>常用标签</h3></span>
+	<span><h3>我的标签</h3></span>
 	<?php echo $tag_html ?>
 </div>

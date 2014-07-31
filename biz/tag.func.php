@@ -156,6 +156,50 @@ function get_tag_array_by_bookmark_id($bookmark_id,$pdo){
 }
 
 /**
+ * 根据tag_id的数组查出对应tag的文章数量，返回包含tag_id和count并且对应count>0的二维数组
+ * 并且已经按照count值降序排序
+ * @param unknown_type $tag_id_array
+ * @param unknown_type $pdo
+ */
+function count_bookmarks_of_tags_biggerthan0($tag_id_array,$pdo){
+	if(empty($tag_id_array)){
+		return null;
+	}
+	$tag_id_count_array = array();
+	$array_for_sort = array();
+	$stmt = $pdo->prepare("select count(bookmark_id) as tag_count from bookmark_tag where tag_id=?");
+	foreach($tag_id_array as $tag_id){
+		$stmt->execute(array($tag_id));
+		if($stmt->rowCount()>0){
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+			if($row['tag_count']>0){
+				$arr = array();
+				$arr['tag_id'] = $tag_id;
+				$arr['tag_count'] = $row['tag_count'];
+				array_push($array_for_sort,$row['tag_count']);
+				array_push($tag_id_count_array, $arr);
+			}
+		}
+	}
+	//insertion sort
+	$size = count($array_for_sort);
+	for($i=1;$i<$size;$i++){
+		for($j=$i;$j>0;$j--){
+			if($array_for_sort[$j]>$array_for_sort[$j-1]){
+				$temp = $tag_id_count_array[$j];
+				$tag_id_count_array[$j] = $tag_id_count_array[$j-1];
+				$tag_id_count_array[$j-1] = $temp;
+				
+				$temp = $array_for_sort[$j];
+				$array_for_sort[$j] = $array_for_sort[$j-1];
+				$array_for_sort[$j-1] = $temp;
+			}
+		}
+	}
+	return $tag_id_count_array;
+}
+
+/**
  * 根据bookmark_id删除bookmark_tag的记录
  * @param unknown_type $bookmark_id
  * @param unknown_type $pdo
