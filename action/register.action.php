@@ -26,6 +26,10 @@ if(isset($_POST['sub'])){
 	if(!check_token()){
 		redirect(false);
 	}
+	//check email
+	if(!check_email($email)){
+		redirect(false,"emailerror");
+	}
 	
 	if(empty($nick)||empty($email)||empty($password)||empty($repassword)){
 		redirect(false);

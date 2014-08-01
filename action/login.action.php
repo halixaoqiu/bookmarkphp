@@ -17,14 +17,17 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 }
 
 if(isset($_POST['sub'])){
-	
+	$email = trim($_POST["email"]);
+	$password = trim($_POST["password"]);
 	//csrf token check
 	if(!check_token()){
 		redirect(false,"csrferr");
 	}
+	//check email
+	if(!check_email($email)){
+		redirect(false,"emailerror");
+	}
 	
-	$email = trim($_POST["email"]);
-	$password = trim($_POST["password"]);
 	$stmt = $pdo->prepare("select user_id,nick from user where email=? and password=?");
 	$stmt->execute(array($email,gen_pwd($password)));
 	if($stmt->rowCount()>0){
@@ -32,7 +35,7 @@ if(isset($_POST['sub'])){
 		$_SESSION["isLogin"] = 1;
 		redirect(true);
 	}else{
-		redirect(false);
+		redirect(false,"noexist");
 	}
 }
 
