@@ -25,7 +25,6 @@ h2 {
 	-webkit-margin-end: 0px;
 	font-weight: bold;
 }
-
 .bp-fix{
 	padding:0 105px 0 105px;
 }
@@ -56,3 +55,9 @@ h2 {
 .split-line{
 	border-top:1px solid #eee;
 }
+.top-search-input{
+	width: 345px !important;
+	line-height: 17px;
+}
+
+

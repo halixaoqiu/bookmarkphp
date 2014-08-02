@@ -15,6 +15,14 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 	    	<a class="navbar-brand" href="index.php">草莓收藏</a>
 		</div>
 		<div>
+			<form class="navbar-form navbar-left" role="search" action="action/search.action.php" method="post">
+				<div class="form-group">
+					<input type="text" name="search" class="form-control top-search-input" placeholder="搜索收藏或者标签">
+				</div>
+				<button type="submit" name="sub" class="btn btn-default">搜索</button>
+			</form>
+		</div>
+		<div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="index.php">主页</a></li>
 				<li><a href="#about">关于我们</a></li>
