@@ -103,8 +103,8 @@ function create_tags($tag,$user_id,$pdo){
  * @param unknown_type $tag_name
  * @param unknown_type $pdo
  */
-function  create_a_bookmark_tag($bookmark_id,$tag_id,$tag_name,$pdo){
-	$stmt = $pdo->prepare("insert into bookmark_tag(bookmark_id,tag_id,tag_name,create_time,modify_time) values(?,?,?,now(),now())");
+function  create_a_bookmark_tag($bookmark_id,$user_id,$tag_id,$tag_name,$pdo){
+	$stmt = $pdo->prepare("insert into bookmark_tag(bookmark_id,user_id,tag_id,tag_name,create_time,modify_time) values(?,?,?,now(),now())");
 	$count = $stmt->execute(array($bookmark_id,$tag_id,$tag_name));
 	if($count>0){
 		//do nothing

@@ -49,7 +49,7 @@ if(isset($_POST['sub'])){
 			//如果$tag不为空，先清空老的bookmark_tag表记录，再插入新记录
 			remove_bookmark_tag_by_bookmark_id($bookmark_id,$pdo);
 			foreach($tag_id_name_array as $arr){
-				create_a_bookmark_tag($bookmark_id,$arr['tag_id'],$arr['tag_name'],$pdo);
+				create_a_bookmark_tag($bookmark_id,$user_id,$arr['tag_id'],$arr['tag_name'],$pdo);
 			}
 		}
 		redirect(true);

@@ -48,7 +48,7 @@ if(isset($_POST['sub'])){
 		//在bookmark_tag表中插入收藏和标签的关联记录
 		if(!empty($tag_id_name_array)){
 			foreach($tag_id_name_array as $arr){
-				create_a_bookmark_tag($bookmark_id,$arr['tag_id'],$arr['tag_name'],$pdo);
+				create_a_bookmark_tag($bookmark_id,$user_id,$arr['tag_id'],$arr['tag_name'],$pdo);
 			}
 		}
 		redirect(true);

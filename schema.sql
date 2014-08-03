@@ -61,6 +61,7 @@ CREATE TABLE tag(
 CREATE TABLE bookmark_tag(
 	id BIGINT AUTO_INCREMENT, 
 	bookmark_id BIGINT NOT NULL,
+	user_id BIGINT NOT NULL,
 	tag_id BIGINT NOT NULL,
 	tag_name VARCHAR(50) NOT NULL,
 	create_time DATETIME NOT NULL,
