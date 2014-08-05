@@ -25,6 +25,19 @@ h2 {
 	-webkit-margin-end: 0px;
 	font-weight: bold;
 }
+ul {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+ul,li{
+	padding: 0;
+	margin: 0;
+}
 .bp-fix{
 	padding:0 105px 0 105px;
 }
@@ -62,5 +75,21 @@ h2 {
 .em {
 	color: #C20A0A;
 }
-
-
+.side-nav-link{
+	padding: 0 0 0 0px;
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	color: #666;
+}
+.side-nav-li{
+	display: block;
+	margin-bottom: 3px;
+	list-style: none;
+}
+.side-nav-link:hover {
+	color: #2a6496;
+	background: #eee;
+	border-radius: 3px;
+	text-decoration: none;
+}

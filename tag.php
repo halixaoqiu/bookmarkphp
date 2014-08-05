@@ -11,7 +11,7 @@ if(empty($tag_name)){
 	redirect();
 }
 //常量定义
-$page_title = "我的标签-草莓收藏";
+$page_title = "标签-草莓收藏";
 
 $user_id = $_SESSION['user_id'];
 

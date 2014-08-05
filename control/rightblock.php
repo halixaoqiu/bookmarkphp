@@ -31,12 +31,15 @@
 	}
 	
 ?>
-
-<div><span><a href="addbookmark.php">添加收藏</a></span></div>
-<div><span><a href="">管理收藏</a></span></div>
-<div><span><a href="">我的标签</a></span></div>
-<div class="split-line-block">
-	<div class="split-line"></div>
+<div>
+	<ul>
+		<li class="side-nav-li"><a class="side-nav-link" href="addbookmark.php">添加收藏</a></li>
+		<li class="side-nav-li"><a class="side-nav-link" href="">管理收藏</a></li>
+		<li class="side-nav-li"><a class="side-nav-link" href="">我的标签</a></li>
+	</ul>
+	<div class="split-line-block">
+		<div class="split-line"></div>
+	</div>
 </div>
 <div>
 	<span><h3>我的标签</h3></span>
