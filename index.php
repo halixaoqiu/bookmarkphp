@@ -30,7 +30,7 @@
 							$tag_array = get_tag_array_by_bookmark_id($bookmark_id,$pdo);
 							$tag_html = "";
 							foreach($tag_array as $tag){
-								$tag_html = $tag_html."<span><a href='index.php'>".$tag."</a></span> ";
+								$tag_html = $tag_html."<span><a href='tag.php?tag=".$tag."'>".$tag."</a></span> ";
 							}
 							$tag_html = trim($tag_html);
 							$is_public_text = $row['is_public']==1?"公开":"私有";

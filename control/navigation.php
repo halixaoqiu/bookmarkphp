@@ -19,7 +19,7 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 				<div class="form-group">
 					<input type="text" name="search" class="form-control top-search-input" placeholder="搜索收藏或者标签">
 				</div>
-				<button type="submit" name="sub" class="btn btn-default">搜索</button>
+				<button type="submit" name="sub" class="btn btn-default btn-top-search">搜索</button>
 			</form>
 		</div>
 		<div>

@@ -44,4 +44,14 @@
 <div>
 	<span><h3>我的标签</h3></span>
 	<?php echo $tag_html ?>
+	<div class="split-line-block">
+		<div class="split-line"></div>
+	</div>
+	<span><h3>热门标签</h3></span>
+	<?php echo $tag_html ?>
+	<div class="split-line-block">
+		<div class="split-line"></div>
+	</div>
+	<span><h3>公告栏</h3></span>
+	<li class="side-nav-li"><a class="side-nav-link" href="">什么是草莓收藏？</a></li>
 </div>

@@ -10,6 +10,9 @@ a{
 	color:#428bca;
 	text-decoration: none;
 }
+a:hover{
+	text-decoration: none;
+}
 h1, h2, h3, h4, h5 {
 	font-weight: 700;
 	font-size: 14px;
@@ -38,6 +41,21 @@ ul,li{
 	padding: 0;
 	margin: 0;
 }
+.navbar-default {
+	background-color: #4DC1F8;
+}
+.navbar-brand {
+	color: #FFF;
+}
+.btn-top-search {
+color: #333;
+background-color: #78D3F6;
+border-color: #15B1EE;
+}
+.navbar-nav>li>a {
+	color: #FFF;
+}
+
 .bp-fix{
 	padding:0 105px 0 105px;
 }
