@@ -27,7 +27,7 @@
 	
 	$tag_html = "";
 	foreach($tag_merge_array as $tag){
-		$tag_html = $tag_html."<span class='tag-split-my-tag'><a href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."(".$tag['tag_count'].")</a></span>";
+		$tag_html = $tag_html."<span class='tag-split-my-tag'><a class='tag-block' href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."(".$tag['tag_count'].")</a></span>";
 	}
 	
 ?>
