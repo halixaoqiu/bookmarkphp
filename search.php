@@ -79,9 +79,7 @@ EOT;
 					}
 				?>
 				</div>
-				<div class="col-md-3">
-					<?php include 'control/rightblock.php';?>
-				</div>
+				<?php include 'control/rightblock.php';?>
 			</div>
 		</div>
 	</body>

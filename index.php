@@ -22,7 +22,8 @@
 		<?php include 'control/navigation.php';?>
 		<div class="container bp-fix">
 			<div class="row">
-				<div class="col-md-9">
+				<?php include 'control/leftblock.php';?>
+				<div class="col-md-7">
 				<?php 
 					if(!empty($rows)){
 						foreach($rows as $row){
@@ -63,9 +64,7 @@ EOT;
 					}
 				?>
 				</div>
-				<div class="col-md-3">
-					<?php include 'control/rightblock.php';?>
-				</div>
+				<?php include 'control/rightblock.php';?>
 			</div>
 		</div>
 	</body>
