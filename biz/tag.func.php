@@ -135,6 +135,23 @@ function get_tag_str_by_bookmark_id($bookmark_id,$pdo){
 }
 
 /**
+ * 给访客提供的获取标签方法
+ * @param unknown_type $pdo
+ */
+function get_tag_array_for_guest($pdo){
+	$tag_array = array();
+	$stmt = $pdo->prepare("select distinct tag_name from tag limit 20");
+	$stmt->execute();
+	if($stmt->rowCount()>0){
+		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		foreach($rows as $row){
+			array_push($tag_array, $row['tag_name']);
+		}
+	}
+	return $tag_array;
+}
+
+/**
  * 根据bookmark_id获取包含标签name的数组
  * @param unknown_type $bookmark_id
  * @param unknown_type $pdo
