@@ -22,6 +22,15 @@ h1, h2, h3, h4, h5 {
 h2 {
 	display: block;
 	font-size: 1.5em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+h1 {
+	display: block;
+	font-size: 1.5em;
 	-webkit-margin-before: 0.83em;
 	-webkit-margin-after: 0.83em;
 	-webkit-margin-start: 0px;
@@ -49,12 +58,20 @@ ul,li{
 	color: #FFF !important;
 }
 .btn-top-search {
-color: #333;
-background-color: #78D3F6;
-border-color: #15B1EE;
+	color: #FFF;
+	background-color: #1C8CE5;
+	border-color: #66AEE7;
+}
+.btn-top-search:hover{
+	color: #FFF;
+	background-color: #50A7EE;
+	border-color: #66AEE7;
 }
 .navbar-nav>li>a {
 	color: #FFF;
+}
+.navbar-active{
+	background-color:#1C8CE5;
 }
 
 .bp-fix{
@@ -102,9 +119,18 @@ border-color: #15B1EE;
 .top-search-input{
 	width: 345px !important;
 	line-height: 17px;
+	background-color: #E1EAF2;
 }
 .em {
 	color: #C20A0A;
+}
+.add-bookmark-link{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 0 0 0px;
+	display: block;
+	height: 28px;
+	line-height: 28px;
 }
 .side-nav-link{
 	padding: 0 0 0 0px;
@@ -130,4 +156,17 @@ border-color: #15B1EE;
 	color: #f2f4f5 !important;
 	text-shadow: 0 1px 1px rgba(0,0,0,0);
 	font-size: 14px;
+}
+.navbar-default .navbar-text {
+	color: #FFF;
+}
+.navbar-default .navbar-link {
+	color: #FFF;
+}
+.tag-bar{
+	color: #666;
+	font-size: 18px;
+	margin-top: -10px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ccc;
 }

@@ -24,7 +24,7 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 		</div>
 		<div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a class="top-nav-link" href="index.php">主页</a></li>
+				<li class="navbar-active"><a class="top-nav-link" href="index.php">主页</a></li>
 				<li><a class="top-nav-link" href="#about">关于我们</a></li>
 				<li><a class="top-nav-link" href="#contact">联系我们</a></li>
 			</ul>

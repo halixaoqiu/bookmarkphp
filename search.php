@@ -39,7 +39,11 @@ function redirect(){
 		<?php include 'control/navigation.php';?>
 		<div class="container bp-fix">
 			<div class="row">
-				<div class="col-md-9">
+				<?php include 'control/leftblock.php';?>
+				<div class="col-md-7">
+				<div class="tag-bar">
+					<h1><?php echo "「".$text."」" ?>的搜索结果</h1>
+				</div>
 				<?php 
 					if(!empty($rows)){
 						foreach($rows as $row){
