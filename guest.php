@@ -59,7 +59,6 @@ EOT;
 					}
 				?>
 				</div>
-				<?php include 'control/rightblockforguest.php';?>
 			</div>
 		</div>
 	</body>
