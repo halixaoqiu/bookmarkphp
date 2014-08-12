@@ -17,47 +17,33 @@
 		<?php include 'control/head.php';?>
 	</head>
 	<body>
-		<?php include 'control/navigation.php';?>
-		<div class="container bp-fix">
-			<div class="row">
-				<div class="col-md-9">
-				<?php 
-					if(!empty($rows)){
-						foreach($rows as $row){
-							$bookmark_id = $row['bookmark_id'];
-							$tag_array = get_tag_array_by_bookmark_id($bookmark_id,$pdo);
-							$tag_html = "";
-							foreach($tag_array as $tag){
-								$tag_html = $tag_html."<span><a href='tag.php?tag=".$tag."'>".$tag."</a></span> ";
-							}
-							$tag_html = trim($tag_html);
-							$is_public_text = $row['is_public']==1?"公开":"私有";
-							$summary_class = !empty($row['summary'])?"item-block-common":"";
-echo <<<EOT
-<div class="main-container">
-	<div class="font-bold">
-		<h4><a href="{$row['url']}" target="_blank">{$row['title']}</a></h4>
-	</div>
-	<div class="">
-		<span class="color-tag">网址</span>
-		<span>{$row['url']}</span>
-	</div>
-	<div class="{$summary_class}">{$row['summary']}</div>
-	<div class="item-block-common">
-		<span class="color-tag">{$is_public_text}</span>
-		<span class="color-tag tag-split">标签</span>
-		<span><a>{$tag_html}</a></span> 
-		<span class="color-tag tag-split">收藏于</span>
-		<span class="color-tag">{$row['create_time']}</span>
-	</div>
-	<div class="split-line-block">
-		<div class="split-line"></div>
-	</div>
-</div>
-EOT;
-						}
-					}
-				?>
+		<div class ="gust-banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<h1 class="heading">喝一杯美味的咖啡，学一学Java</h1>
+					</div>
+					<div class="col-md-5">
+						<form accept-charset="UTF-8" action="/join" autocomplete="off" class="form-signup-home js-form-signup-home" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="Omr4C92IxdfD91dAzN+YAKM/A8SS/bSEuLWtt09DKW7ZvT+GdJ2/7yq6c+QJpkwWKFiF25XJuyUjIq8+eYumBA=="></div>        <dl class="form">
+						          <dd>
+						            <input type="text" name="user[login]" class="textfield" placeholder="Pick a username" data-autocheck-url="/signup_check/username" autofocus="">
+						          </dd>
+						        </dl>
+						        <dl class="form">
+						          <dd>
+						            <input type="text" name="user[email]" class="textfield js-email-notice-trigger" placeholder="Your email" data-autocheck-url="/signup_check/email">
+						          </dd>
+						        </dl>
+						        <dl class="form successed">
+						          <dd>
+						            <input type="password" name="user[password]" class="textfield is-autocheck-successful" placeholder="Create a password" data-autocheck-url="/signup_check/password">
+						          </dd>
+						          <p class="text-muted">Use at least one lowercase letter, one numeral, and seven characters.</p>
+						        </dl>
+						        <input type="hidden" name="source_label" value="Homepage Form">
+						        <button class="button primary button-block" type="submit">Sign up for GitHub</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

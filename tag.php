@@ -65,7 +65,7 @@ function redirect(){
 				<?php include 'control/leftblock.php';?>
 				<div class="col-md-7">
 				<div class="tag-bar">
-					<h1><?php echo $tag_title ?></h1>
+					<h2><?php echo $tag_title ?></h2>
 				</div>
 				<?php 
 					if(!empty($rows)){

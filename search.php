@@ -42,7 +42,7 @@ function redirect(){
 				<?php include 'control/leftblock.php';?>
 				<div class="col-md-7">
 				<div class="tag-bar">
-					<h1><?php echo "「".$text."」" ?>的搜索结果</h1>
+					<h2><?php echo "「".$text."」" ?>的搜索结果</h2>
 				</div>
 				<?php 
 					if(!empty($rows)){
