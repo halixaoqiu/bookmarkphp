@@ -6,7 +6,7 @@
 	require_once '/biz/tag.func.php';
 	
 	//常量定义
-	$page_title = "草莓收藏";
+	$page_title = "草莓收藏-方便的管理、分享你的收藏";
 	
 	$stmt = $pdo->prepare("select * from bookmark where is_public=1 order by create_time desc limit 10");
 	$stmt->execute();
