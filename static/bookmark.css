@@ -31,11 +31,10 @@ h2 {
 h1 {
 	display: block;
 	font-size: 1.5em;
-	-webkit-margin-before: 0.83em;
-	-webkit-margin-after: 0.83em;
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
 	font-weight: bold;
+	margin: 0;
 }
 ul {
 	display: block;
@@ -176,8 +175,12 @@ ul,li{
 	top: 0;
 	z-index: 10;
 	overflow: hidden;
-	height: 500px;
+	height: 450px;
 	width: 100%;
+}
+.guest-label{
+	color:#FFF;
+	font-size: 14px;
 }
 .form-signup-home {
 	float: right;
@@ -185,11 +188,19 @@ ul,li{
 	margin-left: 40px;
 }
 .heading {
-	margin-top: 0;
-	padding-top: 10px;
+	padding-top: 0px;
 	font-size: 70px;
 	font-weight: normal;
-	line-height: 1;
 	color: #fff;
 	letter-spacing: -1px;
+}
+.guest-input{
+	font-size: 16px;
+	height: 40px;
+}
+.login-link {
+	text-align: right;
+	display: block;
+	color: #FFF !important;
+	font-size: 14px;
 }

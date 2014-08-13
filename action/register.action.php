@@ -20,7 +20,6 @@ if(isset($_POST['sub'])){
 	$nick = trim($_POST['nick']);
 	$email = trim($_POST['email']);
 	$password = trim($_POST['password']);
-	$repassword = trim($_POST['repassword']);
 	
 	//csrf token check
 	if(!check_token()){
@@ -31,11 +30,7 @@ if(isset($_POST['sub'])){
 		redirect(false,"emailerror");
 	}
 	
-	if(empty($nick)||empty($email)||empty($password)||empty($repassword)){
-		redirect(false);
-	}
-	
-	if($password!==$repassword){
+	if(empty($nick)||empty($email)||empty($password)){
 		redirect(false);
 	}
 	
