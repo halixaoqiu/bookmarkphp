@@ -17,6 +17,6 @@
 	session_destroy();
 	
 	//跳转到登录页
-	header("location:login.php");
+	header("location:guest.php");
 	exit;
 ?>

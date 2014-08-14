@@ -36,8 +36,8 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
       				echo "欢迎$nick | ";
       				echo '<a href="logout.php" class="navbar-link">退出</a>';
       			}else{
-      				echo '<a href="login.php" class="navbar-link">登录</a> | ';
-      				echo '<a href="register.php" class="navbar-link">注册</a>';
+      				echo '<a href="guest.php" class="navbar-link">登录</a> | ';
+      				echo '<a href="guest.php" class="navbar-link">注册</a>';
       			}
       		?>
 	    	</p>

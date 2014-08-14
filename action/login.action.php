@@ -48,7 +48,7 @@ function redirect($isSuccess, $errmsg){
 		header("location:../index.php");
 		exit;
 	}else{
-		header("location:../login.php?errmsg=$errmsg");
+		header("location:../guest.php?errmsg=$errmsg");
 		exit;
 	}
 }

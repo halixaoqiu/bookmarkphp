@@ -30,7 +30,6 @@
 		$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."(".$tag['tag_count'].")</a></li>";
 	}
 	$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=&type=notag\">无标签</a></li></ul>";
-	
 ?>
 <div class="col-md-2">
 	<div>

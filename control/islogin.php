@@ -4,7 +4,7 @@
 	 */
 	session_start();
 	if(!isset($_SESSION['isLogin']) || $_SESSION['isLogin']!=1){
-		header("location:login.php");
+		header("location:guest.php");
 		exit;
 	}
 ?>

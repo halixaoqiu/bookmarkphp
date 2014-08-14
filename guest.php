@@ -6,6 +6,14 @@
 	//常量定义
 	$page_title = "草莓收藏-方便的管理、分享你的收藏";
 	
+	session_start();
+	
+	//判断是否已经登录
+	if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
+		header("location:index.php");
+		exit;
+	}
+	
 ?>
 <html>
 	<head>
@@ -62,29 +70,32 @@
             		<div class="modal-body">
             			<form class="form-horizontal" role="form" action="action/login.action.php" method="post">
 			  				<div class="form-group">
-			    				<div class="col-sm-10 col-sm-offset-1">
+			    				<div class="col-sm-8 col-sm-offset-2">
 			    					<input type="email" name="email" class="form-control guest-input" id="email" placeholder="邮箱">
 			    				</div>
 			  				</div>
 			  				<div class="form-group">
-							    <div class="col-sm-10 col-sm-offset-1">
+							    <div class="col-sm-8 col-sm-offset-2">
 								    <input type="password" name="password" class="form-control guest-input" id="password" placeholder="密码">
 							  	</div>
 						  	</div>
 						  	<div class="form-group">
-						  		<div class="col-sm-10 col-sm-offset-1">
+						  		<div class="col-sm-8 col-sm-offset-2">
 									<button type="submit" name="sub" class="btn btn-success btn-block guest-input">登录 SIGN IN</button>
+								</div>
+							</div>
+							<div class="form-group">
+						  		<div class="col-sm-8">
+									<a href="#" class="login-link">已有账号，我要登录</a>
 								</div>
 							</div>
 						</form>
             		</div>
             		<div class="modal-footer">
 			            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-<!--			            <button type="button" class="btn btn-primary">提交更改</button>-->
 			         </div>
             	</div>
             </div>
         </div>  
-		
 	</body>
 </html>
