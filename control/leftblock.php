@@ -27,22 +27,20 @@
 	
 	$tag_html = "<ul><li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=&type=all\">所有收藏</a></li>";
 	foreach($tag_merge_array as $tag){
-		$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."(".$tag['tag_count'].")</a></li>";
+		$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."<span class='my-tag-count'>".$tag['tag_count']."</span></a></li>";
 	}
 	$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=&type=notag\">无标签</a></li></ul>";
 ?>
 <div class="col-md-2">
-	<div>
+	<div style="padding:0 0 0 5px">
 		<ul>
 			<li class="side-nav-li"><h3><a class="add-bookmark-link" href="addbookmark.php">添加新收藏</a></h3></li>
-<!--			<li class="side-nav-li"><a class="side-nav-link" href="">管理收藏</a></li>-->
-<!--			<li class="side-nav-li"><a class="side-nav-link" href="">我的标签</a></li>-->
 		</ul>
 		<div class="split-line-block">
 			<div class="split-line"></div>
 		</div>
 	</div>
-	<div>
+	<div class="my-tags">
 		<span><h3>我的收藏</h3></span>
 		<?php echo $tag_html ?>
 	</div>
