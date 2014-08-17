@@ -33,12 +33,12 @@
 ?>
 <div class="col-md-3">
 	<div>
-		<span><h3>我的标签</h3></span>
+		<span><h3>热门标签</h3></span>
 		<?php echo $tag_html ?>
 		<div class="split-line-block">
 			<div class="split-line"></div>
 		</div>
-		<span><h3>热门标签</h3></span>
+		<span><h3>热门收藏</h3></span>
 		<?php echo $tag_html ?>
 		<div class="split-line-block">
 			<div class="split-line"></div>
