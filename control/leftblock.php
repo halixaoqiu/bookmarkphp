@@ -26,6 +26,8 @@
 	}
 	
 	$tag_html = "<ul><li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=&type=all\">所有收藏</a></li>";
+	$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=&type=public\">公开收藏</a></li>";
+	$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=&type=private\">私有收藏</a></li>";
 	foreach($tag_merge_array as $tag){
 		$tag_html = $tag_html."<li class='side-nav-li'><a class='side-nav-link' href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."<span class='my-tag-count'>".$tag['tag_count']."</span></a></li>";
 	}

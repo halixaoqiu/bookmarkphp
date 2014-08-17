@@ -24,8 +24,18 @@ if($type=='all'){
 	$stmt = $pdo->prepare("select * from bookmark where user_id=? order by create_time desc");
 	$stmt->execute(array($user_id));
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}elseif($type=='public'){
+	$tag_title = "公开收藏";
+	$stmt = $pdo->prepare("select * from bookmark where user_id=? and is_public=1 order by create_time desc");
+	$stmt->execute(array($user_id));
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}elseif($type=='private'){
+	$tag_title = "私有收藏";
+	$stmt = $pdo->prepare("select * from bookmark where user_id=? and is_public=0 order by create_time desc");
+	$stmt->execute(array($user_id));
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }elseif($type=='notag'){
-	$tag_title = "无标签的收藏";
+	$tag_title = "无标签收藏";
 }else{
 	$stmt = $pdo->prepare("select bookmark_id from bookmark_tag where tag_name=? and user_id=? order by create_time desc");
 	$stmt->execute(array($tag_name,$user_id));
