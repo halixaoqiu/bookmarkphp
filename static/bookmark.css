@@ -218,5 +218,16 @@ ul,li{
 	display: block;
 	color: #666;
 }
-
+.latest-bookmark{
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.rightside-nav-link{
+	padding: 0 0 0 0px;
+	height: 28px;
+	line-height: 28px;
+	color: #666;
+}
 

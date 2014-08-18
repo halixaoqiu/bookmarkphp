@@ -30,6 +30,18 @@
 		$tag_html = $tag_html."<span class='tag-split-my-tag'><a class='tag-block' href=\"tag.php?tag=".$tag['tag_name']."\">".$tag['tag_name']."(".$tag['tag_count'].")</a></span>";
 	}
 	
+	//最新收藏
+	$rows = array();
+	$new_bookmark_html = "";
+	$stmt = $pdo->prepare("select bookmark_id,title,url from bookmark order by create_time desc limit 5");
+	$stmt->execute();
+	if($stmt->rowCount()>0){
+		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+	foreach ($rows as $row){
+		$new_bookmark_html = $new_bookmark_html."<span class='latest-bookmark'><a class='rightside-nav-link' target='_blank' href='".$row['url']."'>".$row['title']."</a><span>";
+	}
+	
 ?>
 <div class="col-md-3">
 	<div>
@@ -39,7 +51,7 @@
 			<div class="split-line"></div>
 		</div>
 		<span><h3>最新收藏</h3></span>
-		<?php echo $tag_html ?>
+		<?php echo $new_bookmark_html ?>
 		<div class="split-line-block">
 			<div class="split-line"></div>
 		</div>
