@@ -10,8 +10,8 @@
 	$page_title = "草莓收藏-首页";
 	
 	$user_id = $_SESSION['user_id'];
-	$stmt = $pdo->prepare("select * from bookmark where user_id=? order by create_time desc");
-	$stmt->execute(array($user_id));
+	$stmt = $pdo->prepare("select * from bookmark,user where bookmark.user_id=user.user_id order by bookmark.create_time desc limit 50");
+	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html>
@@ -31,13 +31,16 @@
 							$tag_array = get_tag_array_by_bookmark_id($bookmark_id,$pdo);
 							$tag_html = "";
 							foreach($tag_array as $tag){
-								$tag_html = $tag_html."<span><a href='tag.php?tag=".$tag."'>".$tag."</a></span> ";
+								$tag_html = $tag_html."<span><a href='mybookmark.php?tag=".$tag."'>".$tag."</a></span> ";
 							}
 							$tag_html = trim($tag_html);
 							$is_public_text = $row['is_public']==1?"公开":"私有";
 							$summary_class = !empty($row['summary'])?"item-block-common":"";
 echo <<<EOT
 <div class="main-container">
+	<div style="margin:5px 0 0 0;">
+		<span class="color-tag">{$row['nick']} 添加了一个收藏<span>
+	</div>
 	<div class="font-bold">
 		<h4><a href="{$row['url']}" target="_blank">{$row['title']}</a></h4>
 	</div>
@@ -52,8 +55,6 @@ echo <<<EOT
 		<span><a>{$tag_html}</a></span> 
 		<span class="color-tag tag-split">收藏于</span>
 		<span class="color-tag">{$row['create_time']}</span>
-		<span class="color-tag tag-split"><a href="editbookmark.php?bookmark_id={$bookmark_id}" target="_blank">编辑</a></span>
-		<span class="color-tag tag-split"><a href="" target="_blank">删除</a></span>
 	</div>
 	<div class="split-line-block">
 		<div class="split-line"></div>
@@ -66,6 +67,7 @@ EOT;
 				</div>
 				<?php include 'control/rightblock.php';?>
 			</div>
+			<?php include 'control/foot.php';?>
 		</div>
 	</body>
 </html>

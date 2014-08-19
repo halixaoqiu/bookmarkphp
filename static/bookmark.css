@@ -19,6 +19,13 @@ h1, h2, h3, h4, h5 {
 	outline: 0;
 	margin: 5px,0,5px,0;
 }
+h4 {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.7;
+	outline: 0;
+	margin: 0px 0 0px 0 !important;
+}
 h2 {
 	display: block;
 	font-size: 1.5em;
@@ -108,7 +115,7 @@ ul,li{
 	padding:0px 10px 0 0;
 }
 .item-block-common{
-	padding:5px 0 0 0;	
+	padding:0 0 0 0;	
 }
 .split-line-block{
 	margin:10px 0 0 0;
@@ -229,5 +236,11 @@ ul,li{
 	height: 28px;
 	line-height: 28px;
 	color: #666;
+}
+.copy{
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align: center;
+	color: #999;
 }
 
