@@ -12,7 +12,7 @@ if(isset($_SESSION['isLogin']) && $_SESSION['isLogin']==1){
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
 	<div class="container bp-fix">
 		<div class="navbar-header">
-	    	<a class="navbar-brand" href="index.php">草莓收藏</a>
+	    	<a class="navbar-brand" href="index.php">柠檬收藏</a>
 		</div>
 		<div>
 			<form class="navbar-form navbar-left" role="search" action="search.php" method="get">

@@ -8,7 +8,7 @@
 	require '/biz/tag.func.php';
 	
 	//常量定义
-	$page_title = "草莓收藏-编辑收藏";
+	$page_title = "柠檬收藏-编辑收藏";
 	
 	$user_id = $_SESSION['user_id'];
 	$bookmark_id = trim($_GET['bookmark_id']);

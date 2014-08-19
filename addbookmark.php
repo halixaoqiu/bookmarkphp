@@ -6,7 +6,7 @@
 	require 'biz/checkcsrf.func.php';
 	
 	//常量定义
-	$page_title = "草莓收藏-添加收藏";
+	$page_title = "柠檬收藏-添加收藏";
 	
 	$errmsg = "";
 	if(isset($_GET["errmsg"])){

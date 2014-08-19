@@ -7,7 +7,7 @@ require_once 'config.inc.php';
 require_once '/biz/tag.func.php';
 
 //常量定义
-$page_title = "标签-草莓收藏";
+$page_title = "标签-柠檬收藏";
 
 $tag_name = trim($_GET["tag"]);
 $type = @trim($_GET["type"]);
