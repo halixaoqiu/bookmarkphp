@@ -59,6 +59,9 @@
 				</div>
 			</div>
 		</div>
+		<div class ="gust-banner">
+			
+		</div>
 		
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">  
             <div class="modal-dialog">
