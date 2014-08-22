@@ -60,12 +60,13 @@ if(isset($_POST['sub'])){
  * @param unknown_type $isSuccess
  */
 function redirect($isSuccess, $errmsg){
-	if($isSuccess){
-		header("location:../index.php");
-		exit;
-	}else{
-		header("location:../addbookmark.php?errmsg=$errmsg");
-		exit;
-	}
+	header("location:../index.php");
+//	if($isSuccess){
+//		header("location:../index.php");
+//		exit;
+//	}else{
+//		header("location:../addbookmark.php?errmsg=$errmsg");
+//		exit;
+//	}
 }
 ?>

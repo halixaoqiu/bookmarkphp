@@ -87,11 +87,6 @@
 									<button type="submit" name="sub" class="btn btn-success btn-block guest-input">登录 SIGN IN</button>
 								</div>
 							</div>
-							<div class="form-group">
-						  		<div class="col-sm-8">
-									<a href="#" class="login-link">已有账号，我要登录</a>
-								</div>
-							</div>
 						</form>
             		</div>
             		<div class="modal-footer">

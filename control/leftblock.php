@@ -56,7 +56,7 @@
 <div class="col-md-2">
 	<div style="padding:0 0 0 5px">
 		<ul>
-			<li class="side-nav-li"><h3><a class="add-bookmark-link" href="addbookmark.php">添加新收藏</a></h3></li>
+			<li class="side-nav-li"><h3><a class="add-bookmark-link" href="#" data-toggle="modal" data-target="#addModal">添加新收藏</a></h3></li>
 		</ul>
 		<div class="split-line-block">
 			<div class="split-line"></div>
@@ -67,3 +67,57 @@
 		<?php echo $tag_html ?>
 	</div>
 </div>
+
+<div id="addModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">  
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h1 class="modal-title" id="myModalLabel">添加新收藏</h1>
+            </div>
+            <div class="modal-body">
+				<form class="form-horizontal" role="form" action="action/addbookmark.action.php" method="post">
+					<div class="form-group">
+				    	<label for="url" class="col-sm-2 control-label bookmark-input">网址*</label>
+					    <div class="col-sm-9">
+				       		<input type="text" name="url" class="form-control bookmark-input" id="url" placeholder="">
+					     </div>
+					</div>
+					<div class="form-group">
+				    	<label for="title" class="col-sm-2 control-label bookmark-input">标题*</label>
+					    <div class="col-sm-9">
+				       		<input type="text" name="title" class="form-control bookmark-input" id="title" placeholder="">
+					     </div>
+					</div>
+					<div class="form-group">
+				    	<label for="summary" class="col-sm-2 control-label bookmark-input">描述&nbsp;</label>
+					    <div class="col-sm-9">
+					    	<textarea class="form-control bookmark-input" name="summary" rows="5" id="summary" placeholder=""></textarea>
+					     </div>
+					</div>
+					<div class="form-group">
+				    	<label for="tag" class="col-sm-2 control-label bookmark-input">标签&nbsp;</label>
+					    <div class="col-sm-9">
+				       		<input type="text" name="tag" class="form-control bookmark-input" id="tag" placeholder="">
+					     </div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-9">
+							<div class="checkbox bookmark-input">
+					        	<label><input type="checkbox" name="is_public" checked="checked">标记为公开</label>
+					         </div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-9">
+							<button type="submit" name="sub" class="btn btn-success btn-block bookmark-input">添加收藏</button>
+						</div>
+					</div>
+				</form>
+            </div>
+            <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div> 
