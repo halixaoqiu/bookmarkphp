@@ -21,6 +21,10 @@ function check_email($email){
 	return ereg('^[a-zA-Z0-9][a-zA-Z0-9._-]*\@[a-zA-Z0-9]+\.[a-zA-Z0-9\.]+$', $email);
 }
 
+/**
+ * 转义输入文本中的html标记防止注入
+ * @param unknown_type $input
+ */
 function html2text($input){
 	return htmlspecialchars(stripcslashes($input));
 }
