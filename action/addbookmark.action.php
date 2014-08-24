@@ -9,6 +9,7 @@ require '../config.inc.php';
 require '../control/islogin.php';
 require '../biz/checkcsrf.func.php';
 require '../biz/tag.func.php';
+require '../biz/util.func.php';
 
 if(isset($_POST['sub'])){
 	
@@ -17,11 +18,11 @@ if(isset($_POST['sub'])){
 		redirect(false,"csrferr");
 	}
 	
-	$title = trim($_POST['title']);
-	$url = trim($_POST['url']);
-	$summary = trim($_POST['summary']);
-	$tag = trim($_POST['tag']);
-	$is_public = trim($_POST['is_public'])=="on"?1:0;
+	$title = html2text(trim($_POST['title']));
+	$url = html2text(trim($_POST['url']));
+	$summary = html2text(trim($_POST['summary']));
+	$tag = html2text(trim($_POST['tag']));
+	$is_public = html2text(trim($_POST['is_public']))=="on"?1:0;
 	$user_id = trim($_SESSION['user_id']);
 	
 	if(empty($title)||empty($url)){

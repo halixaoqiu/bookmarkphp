@@ -5,8 +5,9 @@
 require_once '/control/islogin.php';
 require_once 'config.inc.php';
 require_once '/biz/tag.func.php';
+require '/biz/util.func.php';
 
-$text = trim($_GET["search"]);
+$text = html2text(trim($_GET["search"]));
 if(empty($text)){
 	redirect();
 }

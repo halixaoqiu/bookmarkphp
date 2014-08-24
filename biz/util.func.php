@@ -20,5 +20,9 @@ function gen_pwd($pwd){
 function check_email($email){
 	return ereg('^[a-zA-Z0-9][a-zA-Z0-9._-]*\@[a-zA-Z0-9]+\.[a-zA-Z0-9\.]+$', $email);
 }
+
+function html2text($input){
+	return htmlspecialchars(stripcslashes($input));
+}
 	
 ?>

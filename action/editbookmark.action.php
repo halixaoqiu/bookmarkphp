@@ -9,15 +9,16 @@ require '../config.inc.php';
 require '../control/islogin.php';
 require '../biz/checkcsrf.func.php';
 require '../biz/tag.func.php';
+require '../biz/util.func.php';
 
 if(isset($_POST['sub'])){
 	
-	$bookmark_id= trim($_POST['bookmark_id']);
-	$title = trim($_POST['title']);
-	$url = trim($_POST['url']);
-	$summary = trim($_POST['summary']);
-	$tag = trim($_POST['tag']);
-	$is_public = trim($_POST['is_public'])=="on"?1:0;
+	$bookmark_id= html2text(trim($_POST['bookmark_id']));
+	$title = html2text(trim($_POST['title']));
+	$url = html2text(trim($_POST['url']));
+	$summary = html2text(trim($_POST['summary']));
+	$tag = html2text(trim($_POST['tag']));
+	$is_public = html2text(trim($_POST['is_public']))=="on"?1:0;
 	$user_id = trim($_SESSION['user_id']);
 	
 	//csrf token check
