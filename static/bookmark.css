@@ -201,7 +201,7 @@ ul,li{
 	color: #fff;
 	letter-spacing: -1px;
 }
-.guest-input, .bookmark-input{
+.guest-input{
 	font-size: 16px;
 	height: 40px;
 }

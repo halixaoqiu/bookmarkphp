@@ -78,39 +78,39 @@
             <div class="modal-body">
 				<form class="form-horizontal" role="form" action="action/addbookmark.action.php" method="post">
 					<div class="form-group">
-				    	<label for="url" class="col-sm-2 control-label bookmark-input">网址*</label>
+				    	<label for="url" class="col-sm-2 control-label">网址*</label>
 					    <div class="col-sm-9">
-				       		<input type="text" name="url" class="form-control bookmark-input" id="url" placeholder="">
+				       		<input type="text" name="url" class="form-control" id="url" placeholder="">
 					     </div>
 					</div>
 					<div class="form-group">
-				    	<label for="title" class="col-sm-2 control-label bookmark-input">标题*</label>
+				    	<label for="title" class="col-sm-2 control-label">标题*</label>
 					    <div class="col-sm-9">
-				       		<input type="text" name="title" class="form-control bookmark-input" id="title" placeholder="">
+				       		<input type="text" name="title" class="form-control" id="title" placeholder="">
 					     </div>
 					</div>
 					<div class="form-group">
-				    	<label for="summary" class="col-sm-2 control-label bookmark-input">描述&nbsp;</label>
+				    	<label for="summary" class="col-sm-2 control-label">描述&nbsp;</label>
 					    <div class="col-sm-9">
-					    	<textarea class="form-control bookmark-input" name="summary" rows="5" id="summary" placeholder=""></textarea>
+					    	<textarea class="form-control" name="summary" rows="5" id="summary" placeholder=""></textarea>
 					     </div>
 					</div>
 					<div class="form-group">
-				    	<label for="tag" class="col-sm-2 control-label bookmark-input">标签&nbsp;</label>
+				    	<label for="tag" class="col-sm-2 control-label">标签&nbsp;</label>
 					    <div class="col-sm-9">
-				       		<input type="text" name="tag" class="form-control bookmark-input" id="tag" placeholder="">
+				       		<input type="text" name="tag" class="form-control" id="tag" placeholder="">
 					     </div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-9">
-							<div class="checkbox bookmark-input">
+							<div class="checkbox">
 					        	<label><input type="checkbox" name="is_public" checked="checked">标记为公开</label>
 					         </div>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-9">
-							<button type="submit" name="sub" class="btn btn-success btn-block bookmark-input">添加收藏</button>
+							<button type="submit" name="sub" class="btn btn-success btn-block">添加收藏</button>
 						</div>
 					</div>
 				</form>
