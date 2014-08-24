@@ -7,7 +7,7 @@ require_once 'config.inc.php';
 require_once '/biz/tag.func.php';
 
 //常量定义
-$page_title = "标签-柠檬收藏";
+$page_title = "我的收藏-柠檬收藏";
 
 $tag_name = trim($_GET["tag"]);
 $type = @trim($_GET["type"]);
@@ -91,7 +91,7 @@ function redirect(){
 							$summary_class = !empty($row['summary'])?"item-block-common":"";
 echo <<<EOT
 <div class="main-container">
-	<div class="font-bold">
+	<div class="font-bold" style="margin:5px 0 0 0;">
 		<h4><a href="{$row['url']}" target="_blank">{$row['title']}</a></h4>
 	</div>
 	<div class="">
