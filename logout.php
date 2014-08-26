@@ -5,7 +5,7 @@
 	require '/control/islogin.php';
 	
 	//常量定义
-	$page_title = "柠檬收藏-用户注销";
+	$page_title = "草莓收藏-用户注销";
 	
 	$nick = $_SESSION['nick'];
 	

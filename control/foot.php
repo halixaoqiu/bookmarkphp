@@ -1,4 +1,4 @@
 
 <div class="copy">
-	<span>© 2014 柠檬收藏</span>
+	<span>© 2014 草莓收藏</span>
 </div>

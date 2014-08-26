@@ -12,7 +12,7 @@ if(empty($text)){
 	redirect();
 }
 //常量定义
-$page_title = "「".$text."」的搜索结果-柠檬收藏";
+$page_title = "「".$text."」的搜索结果-草莓收藏";
 
 if(isset($_GET['sub'])){
 	$stmt = $pdo->prepare("select * from bookmark where title like ? order by create_time desc");

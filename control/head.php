@@ -1,6 +1,6 @@
 <?php
 	if(empty($page_title)){
-		$page_title = "柠檬收藏";
+		$page_title = "草莓收藏";
 	}
 ?>
 

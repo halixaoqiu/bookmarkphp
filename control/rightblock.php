@@ -61,6 +61,6 @@
 			<div class="split-line"></div>
 		</div>
 		<span><h3>意见反馈</h3></span>
-		<li class="side-nav-li"><a class="side-nav-link" href="">什么是柠檬收藏？</a></li>
+		<li class="side-nav-li"><a class="side-nav-link" href="">什么是草莓收藏？</a></li>
 	</div>
 </div>
