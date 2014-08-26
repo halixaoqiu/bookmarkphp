@@ -28,7 +28,7 @@ function get_tag_id_by_tag_name($tag, $user_id, $pdo){
  */
 function get_tags_by_user_id($user_id, $pdo){
 	if(empty($user_id)){
-		return null;
+		return array();
 	}
 	$tag_id_name_array = array();
 	$stmt = $pdo->prepare("select * from tag where user_id=?");
@@ -180,7 +180,7 @@ function get_tag_array_by_bookmark_id($bookmark_id,$pdo){
  */
 function count_bookmarks_of_tags_biggerthan0($tag_id_array,$pdo){
 	if(empty($tag_id_array)){
-		return null;
+		return array();
 	}
 	$tag_id_count_array = array();
 	$array_for_sort = array();
