@@ -158,7 +158,7 @@ function get_tag_array_for_guest($pdo){
  */
 function get_tag_array_by_bookmark_id($bookmark_id,$pdo){
 	if(empty($bookmark_id)){
-		return null;
+		return array();
 	}
 	$tag_array = array();
 	$stmt = $pdo->prepare("select tag_name from bookmark_tag where bookmark_id=?");
