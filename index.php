@@ -2,9 +2,9 @@
 	/**
 	 * 用户首页
 	 */
-	require_once '/control/islogin.php';
+	require_once 'control/islogin.php';
 	require_once 'config.inc.php';
-	require_once '/biz/tag.func.php';
+	require_once 'biz/tag.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-首页";

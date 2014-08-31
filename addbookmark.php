@@ -2,7 +2,7 @@
 	/**
 	 * 添加收藏页
 	 */
-	require '/control/islogin.php';
+	require 'control/islogin.php';
 	require 'biz/checkcsrf.func.php';
 	
 	//常量定义

@@ -2,10 +2,10 @@
 	/**
 	 * 编辑收藏页
 	 */
-	require '/control/islogin.php';
+	require 'control/islogin.php';
 	require 'config.inc.php';
 	require 'biz/checkcsrf.func.php';
-	require '/biz/tag.func.php';
+	require 'biz/tag.func.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-编辑收藏";
