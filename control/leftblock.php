@@ -98,7 +98,7 @@
 					<div class="form-group">
 				    	<label for="tag" class="col-sm-2 control-label">标签&nbsp;</label>
 					    <div class="col-sm-9">
-				       		<input type="text" name="tag" class="form-control" id="tag" placeholder="多个标签请用空格分隔">
+				       		<input type="text" name="tag" class="form-control" id="tag" data-toggle="tooltip" title="多个标签请用空格分隔" placeholder="多个标签请用空格分隔">
 					     </div>
 					</div>
 					<div class="form-group">
@@ -121,3 +121,7 @@
 		</div>
 	</div>
 </div> 
+
+<script>
+   $(function(){ $("[data-toggle='tooltip']").tooltip();});
+</script>
