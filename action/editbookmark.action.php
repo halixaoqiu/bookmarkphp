@@ -28,7 +28,7 @@ if(isset($_POST['sub'])){
 	//必填字段校验
 	if(empty($title)||empty($url)){
 		$errmsg="FORM_INVALID";
-		redirect(false,$bookmark_id);
+		redirect(false,$bookmark_id,$errmsg);
 	}
 	
 	//用户权限校验
@@ -61,7 +61,7 @@ if(isset($_POST['sub'])){
  * 跳转处理
  * @param unknown_type $isSuccess
  */
-function redirect($isSuccess, $bookmark_id, $errormsg){
+function redirect($isSuccess, $bookmark_id=0, $errormsg=''){
 	if($isSuccess){
 		header("location:../index.php");
 		exit;

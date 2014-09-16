@@ -4,4 +4,5 @@
 	 */
 	
 	define("TOKEN_NAME", "csrf_token");
+	
 ?>

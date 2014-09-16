@@ -2,7 +2,7 @@
 	/**
 	 * 退出登录页
 	 */
-	require '/control/islogin.php';
+	require 'control/islogin.php';
 	
 	//常量定义
 	$page_title = "草莓收藏-用户注销";

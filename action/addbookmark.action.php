@@ -60,7 +60,7 @@ if(isset($_POST['sub'])){
  * 跳转处理
  * @param unknown_type $isSuccess
  */
-function redirect($isSuccess, $errmsg){
+function redirect($isSuccess, $errmsg=''){
 	header("location:../index.php");
 //	if($isSuccess){
 //		header("location:../index.php");

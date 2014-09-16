@@ -18,7 +18,7 @@ function gen_pwd($pwd){
  * @param unknown_type $email
  */
 function check_email($email){
-	return ereg('^[a-zA-Z0-9][a-zA-Z0-9._-]*\@[a-zA-Z0-9]+\.[a-zA-Z0-9\.]+$', $email);
+	return preg_match('/^[a-zA-Z0-9][a-zA-Z0-9._-]*\@[a-zA-Z0-9]+\.[a-zA-Z0-9\.]+$/', $email);
 }
 
 /**
