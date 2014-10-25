@@ -10,7 +10,7 @@
 	$page_title = "草莓收藏-首页";
 	
 	$user_id = $_SESSION['user_id'];
-	$stmt = $pdo->prepare("select * from bookmark,user where bookmark.user_id=user.user_id order by bookmark.create_time desc limit 50");
+	$stmt = $pdo->prepare("SELECT bookmark_id, FROM bookmark LEFT JOIN user ON bookmark.user_id=user.user_id order by bookmark.create_time desc limit 50");
 	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
